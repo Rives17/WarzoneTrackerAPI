@@ -1,23 +1,27 @@
-import { AppRoutingModule } from './../app-routing.module';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SearchComponent } from './search/search.component';
+import { FormsModule } from '@angular/forms';
 
 
 
 @NgModule({
   declarations: [
     BreadcrumbsComponent,
-    HeaderComponent
+    HeaderComponent,
+    SearchComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
+    FormsModule
   ],
   exports: [
-    HeaderComponent
+    HeaderComponent,
+    SearchComponent
   ]
 })
 export class SharedModule { }
