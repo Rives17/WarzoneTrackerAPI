@@ -5,15 +5,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { NopagefoundComponent } from './pages/nopagefound/nopagefound.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
   { 
     path: '', 
     component: PagesComponent,
     children: [
-      { path: 'dashboard', component: DashboardComponent },
-      { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+      { path: 'home', component: HomeComponent },
+      { path: '', redirectTo: '/home', pathMatch: 'full' },
     ]
   },
 
