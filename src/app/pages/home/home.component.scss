@@ -1,9 +1,9 @@
 
 .masthead {
-    background: url("../../../assets/images/background-soldier.jpg"), #0c0c0c;
-    background-size: contain;
+    background: url("../../../assets/images/Soldier\ HD\ WallpaperEdit.png"), #000000;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: center left;
+    background-position: top;
     height: 800px;
 }
 
@@ -11,8 +11,9 @@
 
 .container {
     width:auto;
+    max-width:600px;
     display: block;
-    left: 40%;
+    left: 45%;
     top: 15%;
     position: absolute;
    h1 {

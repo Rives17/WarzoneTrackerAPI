@@ -6,6 +6,7 @@ import { NopagefoundComponent } from './pages/nopagefound/nopagefound.component'
 import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
+import { PlayerComponent } from './pages/player/player.component';
 
 const routes: Routes = [
   { 
@@ -13,6 +14,7 @@ const routes: Routes = [
     component: PagesComponent,
     children: [
       { path: 'home', component: HomeComponent },
+      { path: 'player/:gametarg/:platform', component: PlayerComponent },
       { path: '', redirectTo: '/home', pathMatch: 'full' },
     ]
   },

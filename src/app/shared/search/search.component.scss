@@ -4,7 +4,9 @@
     padding: 0;
     margin: 0;
     display: flex;
-
+    flex-direction: column;
+    align-items: center;
+    height: auto;
 }
 
 .platformBox{
@@ -58,23 +60,29 @@ label {
         }
 }
 
- input {
-    width: 100%;
- }
-.btn-primary {
-    border-color: rgb(42, 175, 30);
-    background-color: rgb(70, 165, 51);
-}
-
-
+ 
+ .active {
+     border: 1px solid rgb(148, 148, 148);
+     background: linear-gradient(45deg, rgb(0, 139, 42) 45%, rgb(113, 197, 117) 100%);
+    }
+    
 .searchBox {
-    align-items: center;
+    width: auto;
 }
 
-.active {
-    border: 1px solid rgb(148, 148, 148);
-    background: linear-gradient(45deg, rgb(0, 139, 42) 45%, rgb(113, 197, 117) 100%);
+.rowSearch {
+    width: 90%;
+
 }
+
+.colSearch {
+    display: flex;
+}
+    
+    .btn-primary {
+        border-color: rgb(42, 175, 30);
+        background-color: rgb(70, 165, 51);
+    }
 
 
 // .title {
