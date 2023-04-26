@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
 import { Br } from 'src/app/interfaces/player';
@@ -12,7 +13,7 @@ import { StatsService } from 'src/app/services/stats.service';
 })
 export class PlayerComponent {
 
-  public players: Br[] = [];
+  public players: Observable<any>[] = [];
 
   constructor(private activatedRoute: ActivatedRoute,
     private statsService: StatsService) { }
@@ -21,7 +22,7 @@ export class PlayerComponent {
 
     this.activatedRoute.params
     .pipe(
-      switchMap( ({gametarg, platform}) => this.statsService.getPlayer(gametarg, platform))
+      switchMap( ({platform, username}) => this.statsService.getMatches(platform, encodeURIComponent(username)))
     )
       .subscribe(resp => {
         console.log(resp);

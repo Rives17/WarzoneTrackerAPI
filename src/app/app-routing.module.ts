@@ -7,21 +7,22 @@ import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PlayerComponent } from './pages/player/player.component';
+import { UserComponent } from './pages/user/user.component';
 
 const routes: Routes = [
   { 
-    path: '', 
+    path: 'api', 
     component: PagesComponent,
     children: [
       { path: 'home', component: HomeComponent },
-      { path: 'player/:gametarg/:platform', component: PlayerComponent },
-      { path: '', redirectTo: '/home', pathMatch: 'full' },
+      { path: 'player/:platform/:username', component: PlayerComponent },
+      { path: 'user', component: UserComponent},
+      { path: 'login', component: LoginComponent },
+
     ]
   },
-
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-
+  
+  { path: '', redirectTo: 'api/home', pathMatch: 'full' },
   { path: '**', component: NopagefoundComponent}
 ]
 

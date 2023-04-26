@@ -8,11 +8,14 @@
 
 }
 
+$colors: (
+    'primary-green': #00CC0E,
+    'secondary-green': #068817,
+    'black-primary': #202020,
+    'black-secondary': #161616,
+);
+
 body {
     font-family: 'Archivo', sans-serif;
+    background-color: map-get($colors, 'black-secondary' )
 }
-
-$colors: (
-    'primary': #00CC0E,
-   'secondary': #6b7cff,
-)

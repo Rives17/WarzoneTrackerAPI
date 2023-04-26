@@ -7,6 +7,7 @@ import { NopagefoundComponent } from './nopagefound/nopagefound.component';
 import { HomeComponent } from './home/home.component';
 import { SharedModule } from '../shared/shared.module';
 import { PlayerComponent } from './player/player.component';
+import { UserComponent } from './user/user.component';
 
 
 
@@ -15,7 +16,8 @@ import { PlayerComponent } from './player/player.component';
     PagesComponent,
     HomeComponent,
     NopagefoundComponent,
-    PlayerComponent
+    PlayerComponent,
+    UserComponent
   ],
   imports: [
     CommonModule,

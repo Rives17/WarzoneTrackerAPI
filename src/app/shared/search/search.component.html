@@ -3,12 +3,12 @@
   <div class="container">
     <div class="row platformBox">
 
-      <div class="col-lg-3 col-sm-6" [ngClass]="{'active': platform === 'acti'}">
-        <label for="acti">
+      <div class="col-lg-3 col-sm-6" [ngClass]="{'active': platform === 'atvi'}">
+        <label for="atvi">
           <div class="platform-item__logo">
             <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/Activision.svg" alt="" />
           </div>
-          <input type="radio" id="acti" class="radio" value="acti" name="platform"
+          <input type="radio" id="atvi" class="radio" value="atvi" name="platform"
             (change)="radioChangeHandler($event)" />
           <p>Activision ID</p>
         </label>
@@ -16,25 +16,21 @@
 
       <div class="col-lg-3 col-sm-6" [ngClass]="{'active': platform === 'psn'}">
         <label for="psn">
-          <div class="platform-item_white">
             <div class="platform-item__logo">
               <img src="https://upload.wikimedia.org/wikipedia/commons/0/00/PlayStation_logo.svg" alt="" />
             </div>
-          </div>
           <input type="radio" id="psn" class="radio" value="psn" name="platform"
             (change)="radioChangeHandler($event)" />
           <p>PlayStation</p>
         </label>
       </div>
 
-      <div class="col-lg-3 col-sm-6" [ngClass]="{'active': platform === 'battle'}">
-        <label for="battle">
-          <div class="platform-item_white">
+      <div class="col-lg-3 col-sm-6" [ngClass]="{'active': platform === 'battlenet'}">
+        <label for="battlenet">
             <div class="platform-item__logo">
               <img src="https://static.wikia.nocookie.net/logopedia/images/f/f6/Battle.net_2021_Icon.svg" alt="" />
             </div>
-          </div>
-          <input type="radio" id="battle" class="radio" value="battle" name="platform"
+          <input type="radio" id="battlenet" class="radio" value="battlenet" name="platform"
             (change)="radioChangeHandler($event)" />
           <p>Battle.net</p>
         </label>
@@ -42,10 +38,8 @@
 
       <div class="col-lg-3 col-sm-6" [ngClass]="{'active': platform === 'xbl'}">
         <label for="xbl">
-          <div class="platform-item_white">
             <div class="platform-item__logo">
-              <img src="assets/xbox-logo.png" alt="" />
-            </div>
+              <img src="../../../assets/images/xbox-logo.png" alt="" />
           </div>
           <input type="radio" id="xbl" class="radio" value="xbl" name="platform"
             (change)="radioChangeHandler($event)" />
@@ -60,9 +54,9 @@
     <div class="row rowSearch">
       <div class="col-lg-12 colSearch">
 
-        <input type="search" value placeholder="Introduce tu id" class="form-control" name="gametarg"
-          [(ngModel)]="gametarg" />
-        <button type="submit" class="btn btn-primary" [routerLink]="['/player', gametarg, platform]">Buscar</button>
+        <input type="search" value placeholder="Introduce tu id" class="form-control" name="username"
+          [(ngModel)]="username" />
+        <button type="button" class="btn btn-primary" [routerLink]="['/player', platform, username]">Buscar</button>
       </div>
 
     </div>
