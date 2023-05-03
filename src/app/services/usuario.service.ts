@@ -15,7 +15,6 @@ const base_url = environment.baseUrl;
 export class UsuarioService {
 
   public usuario!: Usuario;
-  
 
   constructor(private http: HttpClient,
               private router: Router,
@@ -30,23 +29,27 @@ export class UsuarioService {
     return this.usuario.uid || '';
   }
 
-              
-
   validarToken(): Observable<boolean> {
 
+  const token = localStorage.getItem('token') || '';
+
   return this.http.get(`${base_url}/login/renewLogin`, {
-      headers: { 'x-token': this.token }
+      headers: { 'x-token': token }
     }).pipe(
       map( (resp: any) => {
 
-        const { email, google, nombre, role, uid, img = '' } = resp.usuario;
-
-        this.usuario = new Usuario( nombre, email, '', img, google, role, uid)
+        const { username, email, img = '', google, role, uid } = resp.usuario;
+        console.log(resp);
+        
+        this.usuario = new Usuario( username, email, '', img, google, role, uid)
         localStorage.setItem('token', resp.token);
         return true
       }),
 
-      catchError( error => of(false) )
+      catchError( error => {
+        console.log(error)
+        return of(false) 
+      } )
     );
   }
 
@@ -79,11 +82,17 @@ export class UsuarioService {
                 .pipe(
                   tap( (resp: any) => {
                     localStorage.setItem('token', resp.token)
-                  })
+                  }),
+                  catchError( error => of(false))
                 )
     
   }
 
+  logout() {
+    localStorage.removeItem('token');
+  }
+  
+  
   // loginGoogle( token: string ) {
     
   //   return this.http.post(`${base_url}/login/google`, {token})
@@ -94,8 +103,6 @@ export class UsuarioService {
   //     )
   // }
 
-  logout() {
-    localStorage.removeItem('token');
     
     // google.accounts.id.revoke( this.usuario.email, () => {
       
@@ -105,4 +112,4 @@ export class UsuarioService {
     // })
 
   }
-}
+

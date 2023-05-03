@@ -5,7 +5,6 @@
 * {
     margin: 0;
     padding: 0;
-
 }
 
 $colors: (
@@ -13,9 +12,11 @@ $colors: (
     'secondary-green': #068817,
     'black-primary': #202020,
     'black-secondary': #161616,
+    'white': #ffffff,
 );
 
 body {
     font-family: 'Archivo', sans-serif;
+    color: map-get($colors, 'white' );
     background-color: map-get($colors, 'black-secondary' )
 }

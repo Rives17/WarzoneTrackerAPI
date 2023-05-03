@@ -1,64 +1,74 @@
-<div class="container">
-    <div class="login-wrap">
-        <div class="login-html">
-            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
-            <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
-            <div class="login-form">
+<section id="wrapper" class="login-register login-sidebar"
+    style="background-image:url(../../../assets/images/soldier3.png);">
+    <div class="login-box card">
+        <div class="card-body">
 
-                <form id="login-form" [formGroup]="loginForm" (ngSubmit)="login()">
-                <div class="sign-in-htm">
-                    <div class="group">
-                        <label for="email" class="label">Email</label>
-                        <input id="email" formControlName="email" type="text" class="input">
+            <form class="form-horizontal form-material"
+                    [formGroup]="loginForm" 
+                    (ngSubmit)="login()"
+                    id="loginform">
+
+                <h3 class="box-title m-t-40 m-b-0 text-center">WZ Tracker</h3><p class="text-center">Create your account and enjoy</p>
+                <div class="form-group m-t-40">
+                    <div class="col-xs-12">
+                        <input class="form-control" type="email" formControlName="email" placeholder="Email">
                     </div>
-                    <div class="group">
-                        <label for="pass" class="label">Password</label>
-                        <input id="pass" formControlName="password" type="password" class="input" data-type="password">
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <input class="form-control" type="password" formControlName="password" placeholder="Contraseña">
                     </div>
-                    <div class="group">
-                        <input id="check" formControlName="remember" type="checkbox" class="check" checked>
-                        <label for="check"><span class="icon"></span> Keep me Signed in</label>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-12">
+                        <div class="checkbox checkbox-primary pull-left p-t-0">
+                            <input formControlName="remember" id="checkbox-signup" type="checkbox" class="filled-in chk-col-light-blue">
+                            <label for="checkbox-signup"> Recuérdame </label>
+                        </div>
+                        <a href="javascript:void(0)" id="to-recover" class="text-dark pull-right"><i
+                                class="fa fa-lock m-r-5"></i> Forgot pwd?</a>
                     </div>
-                    <div class="group">
-                        <input type="submit" class="button" value="Sign In">
+                </div>
+                <div class="form-group text-center m-t-20">
+                    <div class="col-xs-12">
+                        <button class="btn btn-info btn-lg btn-block text-uppercase btn-rounded" type="submit">Log
+                            In</button>
                     </div>
-                    <div class="hr"></div>
-                    <div class="foot-lnk">
-                        <a href="#forgot">Forgot Password?</a>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 m-t-10 mb-4 text-center" id="google-btn">
+    
+                        <div #googleBtn id="buttonDiv"></div>
+    
+                    </div>
+
+                </div>
+
+                <div class="form-group m-b-0">
+                    <div class="col-sm-12 text-center">
+                        ¿No tines una cuenta todavía? <a routerLink="/register" class="text-primary m-l-5"><b>Sign Up</b></a>
                     </div>
                 </div>
             </form>
-
-            <form id="register-form" [formGroup]="registerForm" (ngSubmit)="crearusuario()">
-                <div class="sign-up-htm">
-                    <div class="group">
-                        <label for="user" class="label">Username</label>
-                        <input id="user" formControlName="username" type="text" class="input">
+            <form class="form-horizontal" id="recoverform" action="index.html">
+                <div class="form-group ">
+                    <div class="col-xs-12">
+                        <h3>Recover Password</h3>
+                        <p class="text-muted">Enter your Email and instructions will be sent to you! </p>
                     </div>
-                    <div class="group">
-                        <label for="pass" class="label">Password</label>
-                        <input id="pass" formControlName="password" type="password" class="input" data-type="password">
+                </div>
+                <div class="form-group ">
+                    <div class="col-xs-12">
+                        <input class="form-control" type="text" required="" placeholder="Email">
                     </div>
-                    <div class="group">
-                        <label for="pass" class="label">Repeat Password</label>
-                        <input id="pass" formControlName="password2" type="password" class="input" data-type="password">
-                    </div>
-                    <div class="group">
-                        <label for="email" class="label">Email Address</label>
-                        <input id="email" formControlName="email" type="text" class="input">
-                    </div>
-                    <div class="group">
-                        <input type="submit" class="button" value="Sign Up">
-                    </div>
-                    <div class="hr"></div>
-                    <div class="foot-lnk">
-                        <label for="tab-1"><a>Already Member?</a></label>
+                </div>
+                <div class="form-group text-center m-t-20">
+                    <div class="col-xs-12">
+                        <button class="btn btn-primary btn-lg btn-block text-uppercase waves-effect waves-light"
+                            type="submit">Reset</button>
                     </div>
                 </div>
             </form>
-
-            </div>
         </div>
     </div>
-
-</div>
+</section>

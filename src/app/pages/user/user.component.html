@@ -1,6 +1,25 @@
-
+<div class="container">
     <div class="row">
-        <h1>{{usuario.username}}</h1>
-        <img src="" alt="">
-    </div>
+        <div class="col-12">
+            <h1 class="text-center">{{usuario.username}}</h1>
+            <div class="text-center">
+                <div class="avatar">
+                    <label for="file-upload">
+                        <img *ngIf="!imgTemp" [src]="usuario.imagenUrl" class="img-avatar" />
+                        <img *ngIf="imgTemp" [src]="imgTemp" class="img-avatar" />
+                    </label>
+                    <input id="file-upload" type="file" (change)="changeImg($any($event.target).files[0])" />
+                </div>
 
+                <br />
+                <br />
+
+                <button type="button" class="btn btn-success waves-effect waves-light m-r-10" [disabled]="!changeImg"
+                    (click)="uploadImg()">
+                    <i class="fa fa-save"></i> Subir archivo
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
