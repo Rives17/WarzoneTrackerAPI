@@ -7,7 +7,7 @@ import { AuthRoutingModule } from './auth/auth.routing';
 
 const routes: Routes = [
   
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'api/home', pathMatch: 'full' },
   { path: '**', component: NopagefoundComponent}
 ]
 

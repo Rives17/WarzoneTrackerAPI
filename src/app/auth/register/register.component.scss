@@ -174,43 +174,36 @@ $colors: (
   }
 }
 
-///////
-
 // .login-register {
-//     background-size: cover;
-//     background-repeat: no-repeat;
-//     background-position: center center;
-//     height: 100%;
-//     width: 100%;
-//     padding: 10% 0;
-//     position: fixed; }
-  
-//   .login-box {
-//     width: 400px;
-//     margin: 0 auto; 
-//     background-color: map-get($colors, 'black-primary' );
-//     border-left: 1px solid rgb(70, 70, 70);
-//   }
-//     .login-box .footer {
-//       width: 100%;
-//       left: 0px;
-//       right: 0px; }
-//     .login-box .social {
-//       display: block;
-//       margin-bottom: 30px; }
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   background-position: center top;
+//   height: 100%;
+//   width: 100%;
+//   padding: 10% 0;
+//   position: fixed; }
 
-//   #google-btn {
-//     display: flex;
-//     justify-content: center;
-//   }
-  
-//   #recoverform {
-//     display: none; }
-  
-//   .login-sidebar {
-//     padding: 0px;
-//     margin-top: 0px; }
-//     .login-sidebar .login-box {
-//       right: 0;
-//       position: absolute;
-//       height: 100%; }
+// .login-box {
+//   width: 400px;
+//   margin: 0 auto; 
+//   background-color: map-get($colors, 'black-primary' );
+//   border-left: 1px solid rgb(70, 70, 70);
+// }
+//   .login-box .footer {
+//     width: 100%;
+//     left: 0px;
+//     right: 0px; }
+//   .login-box .social {
+//     display: block;
+//     margin-bottom: 30px; }
+
+// #recoverform {
+//   display: none; }
+
+// .login-sidebar {
+//   padding: 0px;
+//   margin-top: 0px; }
+//   .login-sidebar .login-box {
+//     right: 0px;
+//     position: absolute;
+//     height: 100%; }
