@@ -47,19 +47,13 @@
         </label>
       </div>
 
-
     </div>
 
-
-    <div class="row rowSearch">
-      <div class="col-lg-12 colSearch">
-
-        <input type="search" value placeholder="Introduce tu id" class="form-control" name="username"
+      <div class="col-lg-12 col-xs-6 colSearch">
+        <input type="search" value placeholder="Introduce tu id" class="input-search" name="username"
           [(ngModel)]="username" />
-        <button type="button" class="btn btn-primary" [routerLink]="['/player', platform, username]">Buscar</button>
+        <button type="button" class="btn" [routerLink]="['api/player', platform, username]">Buscar</button>
       </div>
 
     </div>
-  </div>
-
 </form>

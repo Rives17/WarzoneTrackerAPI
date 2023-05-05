@@ -1,3 +1,12 @@
+$colors: (
+    'yellow-primary': #ffd903,
+    'syellow-secondary': #ffee02,
+    'black-primary': #202020,
+    'black-secondary': #161616,
+    'white': #ffffff,
+
+);
+
 .header-dark {
     background: #1f1f1f;
     background-size:cover;
@@ -11,6 +20,19 @@
     border-radius:0;
     box-shadow:none;
     border:none;
+  }
+
+  .btn {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #ffd903;
+  }
+
+  .btn:hover {
+    color: map-get($colors , 'yellow-primary' );
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #ffd903,
   }
   
   @media (min-width:768px) {
