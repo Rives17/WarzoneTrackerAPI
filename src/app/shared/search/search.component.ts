@@ -9,7 +9,7 @@ import { StatsService } from 'src/app/services/stats.service';
 })
 export class SearchComponent{
 
-  username!: string;
+  gametarg!: string;
   platform!: string;
 
   constructor(private router: Router,
@@ -20,11 +20,9 @@ export class SearchComponent{
   }
 
   searchPlayer() {
-    console.log(this.username);
+    console.log(this.gametarg);
     console.log(this.platform);
 
-    this.statsService.getMatches(this.platform, this.username )
-    // this.statsService.getMatches(this.gametarg, this.platform)
-    // this.router.navigate([`home/player/${this.gametarg.trim()}/${this.platform}`])
+    this.statsService.getMatches(this.platform, this.gametarg )
   };
 }

@@ -24,6 +24,12 @@
                 <label>Repeat password</label>
             </div>
 
+            <div class="user-box">
+                <div class="text-center">
+                    ¿Ya tienes una cuenta? <a routerLink="/api/login"><b>Login</b></a>
+                </div>
+              </div>
+
             <div class="row">
                 <div class="col text-danger">
                     <p *ngIf="campoNoValido('username')">*El nombre es obligatorio.</p>

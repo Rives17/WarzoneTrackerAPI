@@ -38,28 +38,36 @@ $colors: (
 
 .login-box .user-box {
   position: relative;
-}
 
-.login-box .user-box input {
-  width: 100%;
-  padding: 10px 0;
-  font-size: 16px;
-  color: #fff;
-  margin-bottom: 30px;
-  border: none;
-  border-bottom: 1px solid #fff;
-  outline: none;
-  background: transparent;
-}
-.login-box .user-box label {
-  position: absolute;
-  top:0;
-  left: 0;
-  padding: 10px 0;
-  font-size: 16px;
-  color: #fff;
-  pointer-events: none;
-  transition: .5s;
+   input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+   }
+
+   label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+   }
+   .text-center {
+    font-size: 14px;
+    a {
+      color: map-get($colors , 'yellow-primary' );
+    }
+   }
+
 }
 
 .login-box .user-box input:focus ~ label,
@@ -84,6 +92,7 @@ $colors: (
   margin-top: 40px;
   letter-spacing: 4px;
   border: none;
+  cursor: pointer;
 }
 
 .login-box button:hover {

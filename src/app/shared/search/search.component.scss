@@ -8,6 +8,7 @@ $colors: (
 );
 
 $breakpoint-small: 576px;
+$breakpoint-medium: 992px;
 
 .container {
   padding: 0;
@@ -18,16 +19,10 @@ $breakpoint-small: 576px;
 }
 
 .platformBox {
-  height: 60px;
+  height: auto; 
   align-items: center;
   justify-content: space-evenly;
-  .col-lg-3 {
-    width: 25%;
-  }
 
-  .col-xs-6 {
-    width: 50%;
-  }
 }
 
 .col-lg-3 {
@@ -36,7 +31,6 @@ $breakpoint-small: 576px;
   border-radius: 25px;
   background-color: rgb(66, 66, 66);
   padding: 0;
-  margin: 5px;
   input {
     appearance: none;
     visibility: hidden;
@@ -99,6 +93,7 @@ label {
 .colSearch {
   display: flex;
   justify-content: center;
+  margin-top: 10px;
 }
 
 .input-search {
@@ -123,15 +118,21 @@ label {
   box-shadow: 0 0 10px #ffd903,
 }
 
+@media (max-width: $breakpoint-medium) {
+  .platformBox {
+    .col-lg-3 {
+      
+    }
+  }
+}
+
 @media (max-width: $breakpoint-small) {
   .platformBox {
     .col-lg-3 {
-      width: 50%;
+      width: 70%;
+      margin: 5px;
     }
 
-    .col-xs-6 {
-      width: 100%;
-    }
   }
 }
 

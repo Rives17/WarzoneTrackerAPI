@@ -13,19 +13,19 @@ import { StatsService } from 'src/app/services/stats.service';
 })
 export class PlayerComponent {
 
-  public players: Observable<any>[] = [];
+  // public players: Observable<any>[] = [];
 
   constructor(private activatedRoute: ActivatedRoute,
     private statsService: StatsService) { }
 
   ngOnInit(): void {
 
-    this.activatedRoute.params
-    .pipe(
-      switchMap( ({platform, username}) => this.statsService.getMatches(platform, encodeURIComponent(username)))
-    )
-      .subscribe(resp => {
-        console.log(resp);
-      });
+    // this.activatedRoute.params
+    // .pipe(
+    //   switchMap( ({platform, username}) => this.statsService.getMatches(platform, encodeURIComponent(username)))
+    // )
+    //   .subscribe(resp => {
+    //     console.log(resp);
+    //   });
   }
 }

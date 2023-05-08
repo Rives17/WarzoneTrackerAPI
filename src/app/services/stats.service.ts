@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http'
-import { Observable } from 'rxjs';
 
-import { LastMatches } from '../interfaces/matches';
 import { PlayerStats } from '../interfaces/player';
 
 import { environment } from 'src/environments/environment';
@@ -12,10 +10,6 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class StatsService {
-
-  
-  private apiUrl: string = 'https://call-of-duty-modern-warfare.p.rapidapi.com/warzone';
-  private matchesUrl: string = 'https://call-of-duty-modern-warfare.p.rapidapi.com/warzone-matches';
   
   private headers = new HttpHeaders(environment.apiKey);
 
@@ -23,19 +17,12 @@ export class StatsService {
 
     getMatches(gametarg: string, platform: string): any {
 
-      const url = `${environment.apiUrl}/${platform}/${encodeURIComponent(gametarg)}`;
+      const url = `${environment.apiUrl}/${encodeURIComponent(gametarg)}/${platform}`;
       return this.http.get<PlayerStats>( url, {headers: this.headers}).subscribe(
         resp => console.log(resp)
         
       )
 
     };
-
-    getDetails(matchId: string): Observable<LastMatches> {
-
-      const url = `${environment.apiUrl}/${matchId}`;
-      return this.http.get<LastMatches>( url )
-    };
-
 
 }

@@ -3,18 +3,18 @@
   <div class="container">
     <div class="row platformBox">
 
-      <div class="col-lg-3 col-sm-6" [ngClass]="{'active': platform === 'atvi'}">
-        <label for="atvi">
+      <div class="col-lg-3" [ngClass]="{'active': platform === 'acti'}">
+        <label for="acti">
           <div class="platform-item__logo">
             <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/Activision.svg" alt="" />
           </div>
-          <input type="radio" id="atvi" class="radio" value="atvi" name="platform"
+          <input type="radio" id="acti" class="radio" value="acti" name="platform"
             (change)="radioChangeHandler($event)" />
           <p>Activision ID</p>
         </label>
       </div>
 
-      <div class="col-lg-3 col-sm-6" [ngClass]="{'active': platform === 'psn'}">
+      <div class="col-lg-3" [ngClass]="{'active': platform === 'psn'}">
         <label for="psn">
             <div class="platform-item__logo">
               <img src="https://upload.wikimedia.org/wikipedia/commons/0/00/PlayStation_logo.svg" alt="" />
@@ -25,18 +25,18 @@
         </label>
       </div>
 
-      <div class="col-lg-3 col-sm-6" [ngClass]="{'active': platform === 'battlenet'}">
-        <label for="battlenet">
+      <div class="col-lg-3" [ngClass]="{'active': platform === 'battle'}">
+        <label for="battle">
             <div class="platform-item__logo">
               <img src="https://static.wikia.nocookie.net/logopedia/images/f/f6/Battle.net_2021_Icon.svg" alt="" />
             </div>
-          <input type="radio" id="battlenet" class="radio" value="battlenet" name="platform"
+          <input type="radio" id="battle" class="radio" value="battle" name="platform"
             (change)="radioChangeHandler($event)" />
           <p>Battle.net</p>
         </label>
       </div>
 
-      <div class="col-lg-3 col-sm-6" [ngClass]="{'active': platform === 'xbl'}">
+      <div class="col-lg-3" [ngClass]="{'active': platform === 'xbl'}">
         <label for="xbl">
             <div class="platform-item__logo">
               <img src="../../../assets/images/xbox-logo.png" alt="" />
@@ -50,9 +50,9 @@
     </div>
 
       <div class="col-lg-12 col-xs-6 colSearch">
-        <input type="search" value placeholder="Introduce tu id" class="input-search" name="username"
-          [(ngModel)]="username" />
-        <button type="button" class="btn" [routerLink]="['api/player', platform, username]">Buscar</button>
+        <input type="search" value placeholder="Introduce tu id" class="input-search" name="gametarg"
+          [(ngModel)]="gametarg" />
+        <button type="button" class="btn" [routerLink]="['/api/player', gametarg, platform]">Buscar</button>
       </div>
 
     </div>

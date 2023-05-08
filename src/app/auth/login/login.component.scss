@@ -39,29 +39,38 @@ $colors: (
 
 .login-box .user-box {
   position: relative;
+
+   input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+   }
+
+   label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+   }
+   .text-center {
+    font-size: 14px;
+    a {
+      color: map-get($colors , 'yellow-primary' );
+    }
+   }
+
 }
 
-.login-box .user-box input {
-  width: 100%;
-  padding: 10px 0;
-  font-size: 16px;
-  color: #fff;
-  margin-bottom: 30px;
-  border: none;
-  border-bottom: 1px solid #fff;
-  outline: none;
-  background: transparent;
-}
-.login-box .user-box label {
-  position: absolute;
-  top:0;
-  left: 0;
-  padding: 10px 0;
-  font-size: 16px;
-  color: #fff;
-  pointer-events: none;
-  transition: .5s;
-}
 
 .login-box .user-box input:focus ~ label,
 .login-box .user-box input:valid ~ label {
@@ -85,6 +94,7 @@ $colors: (
   margin-top: 40px;
   letter-spacing: 4px;
   border: none;
+  cursor: pointer;
 }
 
 .login-box button:hover {
@@ -174,44 +184,3 @@ $colors: (
     bottom: 100%;
   }
 }
-
-///////
-
-// .login-register {
-//     background-size: cover;
-//     background-repeat: no-repeat;
-//     background-position: center center;
-//     height: 100%;
-//     width: 100%;
-//     padding: 10% 0;
-//     position: fixed; }
-  
-//   .login-box {
-//     width: 400px;
-//     margin: 0 auto; 
-//     background-color: map-get($colors, 'black-primary' );
-//     border-left: 1px solid rgb(70, 70, 70);
-//   }
-//     .login-box .footer {
-//       width: 100%;
-//       left: 0px;
-//       right: 0px; }
-//     .login-box .social {
-//       display: block;
-//       margin-bottom: 30px; }
-
-//   #google-btn {
-//     display: flex;
-//     justify-content: center;
-//   }
-  
-//   #recoverform {
-//     display: none; }
-  
-//   .login-sidebar {
-//     padding: 0px;
-//     margin-top: 0px; }
-//     .login-sidebar .login-box {
-//       right: 0;
-//       position: absolute;
-//       height: 100%; }

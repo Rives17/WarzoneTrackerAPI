@@ -1,3 +1,8 @@
+
+$breakpoint-small: 576px;
+$breakpoint-medium: 992px;
+
+
 input {
   display: none;
 }
@@ -20,4 +25,19 @@ img:hover {
 
 h1 { 
     margin-top: 20px;
+}
+
+
+@media (max-width: $breakpoint-medium) {
+  img {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media (max-width: $breakpoint-small) {
+  img {
+    width: 200px;
+    height: 200px;
+  }
 }
