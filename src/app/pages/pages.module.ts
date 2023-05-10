@@ -8,6 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { SharedModule } from '../shared/shared.module';
 import { PlayerComponent } from './player/player.component';
 import { UserComponent } from './user/user.component';
+import { FormsModule } from '@angular/forms';
+import { PokemonComponent } from './pokemon/pokemon.component';
 
 
 
@@ -17,12 +19,14 @@ import { UserComponent } from './user/user.component';
     HomeComponent,
     NopagefoundComponent,
     PlayerComponent,
-    UserComponent
+    UserComponent,
+    PokemonComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ],
   exports: [
   ]

@@ -1,0 +1,87 @@
+$colors: (
+    'yellow-primary': #ffd903,
+    'syellow-secondary': #ffee02,
+    'black-primary': #202020,
+    'black-secondary': #161616,
+
+);
+
+
+.container-fluid{
+    background-color: map-get($colors, 'black-primary' );
+    padding: 40px;
+    height: 300px;
+    .footer-heading {
+      margin-bottom: 30px;
+      font-size: 24px;
+      
+      .logo {
+        color: #ffffff;
+        text-decoration: none;
+        transition: color 0.3s;
+        font-weight: 800;
+        &:hover {
+          color: map-get($colors, 'yellow-primary' )
+        }
+      }
+    }
+    
+    .menu {
+      margin-bottom: 10px;
+      
+      a {
+        color: #b4b4b4;
+        text-decoration: none;
+        margin-right: 15px;
+        transition: color 0.3s;
+        
+        &:hover {
+            color: map-get($colors, 'yellow-primary' )
+        }
+      }
+    }
+    
+    .ftco-footer-social {
+      margin-bottom: 10px;
+      
+      li {
+        display: inline-block;
+        margin-right: 10px;
+        
+        &:last-child {
+          margin-right: 0;
+        }
+        
+        a {
+          display: inline-block;
+          width: 40px;
+          height: 40px;
+          text-align: center;
+          line-height: 40px;
+          color: #b4b4b4;
+          border-radius: 50%;
+          transition: background-color 0.3s;
+          
+          &:hover {
+            background-color: map-get($colors, 'yellow-primary' );
+            color: map-get($colors, 'black-primary' );
+          }
+        }
+      }
+    }
+    
+    .copyright {
+      font-size: 14px;
+      color: #b4b4b4;
+      
+      a {
+        color: map-get($colors, 'yellow-primary' );
+        text-decoration: none;
+        
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  

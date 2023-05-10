@@ -23,6 +23,7 @@ export class SearchComponent{
     console.log(this.gametarg);
     console.log(this.platform);
 
-    this.statsService.getMatches(this.platform, this.gametarg )
+    // this.statsService.getMatches(this.platform, this.gametarg )
+    this.router.navigateByUrl(`api/player/${encodeURIComponent(this.gametarg)}/${this.platform}`)
   };
 }

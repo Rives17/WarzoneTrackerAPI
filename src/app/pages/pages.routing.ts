@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { PlayerComponent } from './player/player.component';
 import { UserComponent } from './user/user.component';
 import { AuthGuard } from '../guards/auth.guard';
+import { PokemonComponent } from './pokemon/pokemon.component';
 
 const routes: Routes = [
 { 
@@ -16,6 +17,7 @@ const routes: Routes = [
       { path: 'home', component: HomeComponent },
       { path: 'player/:platform/:username', component: PlayerComponent },
       { path: 'user', component: UserComponent, canActivate: [AuthGuard] },
+      { path: 'pokemon/:name', component: PokemonComponent},
     ]
   },
 ]

@@ -1,16 +1,16 @@
+<input type="search" [(ngModel)]="searchTerm" (input)="filterPokemons()">
+
 <div class="container">
-    <div class="row">
-      <div class="col-4">
-        <!-- <h1>{{ player.kdRatio | number: "1.0-2" }}</h1> -->
-        <h3>KD</h3>
+  <div class="row" >
+    <div class="col col-xl-3 col-lg-4 col-sm-6 "*ngFor="let pokemon of pokemons">
+
+      <div class="card text-white bg-dark m-3" style="max-width: 18rem;" [routerLink]="['/api/pokemon', pokemon.name ]" (click)="getOne(pokemon.name)">
+        <img [src]="pokemon.sprites.front_default" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title text-center">{{pokemon.order}} - {{pokemon.name | titlecase}}</h5>
+        </div>
       </div>
-      <div class="col-4">
-        <!-- <h1>{{ player.wins | number: "1.0-2" }}</h1> -->
-        <h3>WINS</h3>
-      </div>
-      <div class="col-4">
-        <!-- <h1>{{ player.kills | number: "1.0-2" }}</h1> -->
-        <h3>KILLS</h3>
-      </div>
+
     </div>
+  </div>
 </div>

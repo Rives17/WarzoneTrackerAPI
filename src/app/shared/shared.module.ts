@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SearchComponent } from './search/search.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -12,7 +13,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   declarations: [
     BreadcrumbsComponent,
     HeaderComponent,
-    SearchComponent
+    SearchComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
@@ -22,7 +24,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
   exports: [
     HeaderComponent,
-    SearchComponent
+    SearchComponent,
+    FooterComponent
   ]
 })
 export class SharedModule { }

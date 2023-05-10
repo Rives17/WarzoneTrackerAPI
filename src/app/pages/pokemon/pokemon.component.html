@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xl-12" *ngFor="let pokemon of onePokemon">
+
+            <div class="pokemon-details">
+                <h2>{{ pokemon.name | titlecase }}</h2>
+
+                <div class="pokemon-image">
+                    <img [src]="pokemon.sprites.front_default" alt="{{ pokemon.name }} image">
+                </div>
+
+                <div class="pokemon-info">
+
+                    <h3>Types:</h3>
+                    <ul>
+                        <li *ngFor="let type of pokemon.types">{{ type.type.name | titlecase }}</li>
+                    </ul>
+                    <br>
+
+                    <p><strong>Weight:</strong> {{ pokemon.weight }}</p>
+                    <p><strong>Height:</strong> {{ pokemon.height }}</p>
+
+                    <h3>Abilities:</h3>
+                    <ul>
+                        <li *ngFor="let ability of pokemon.abilities">{{ ability.ability.name | titlecase }}</li>
+                    </ul>
+
+                    <h3>Moves:</h3>
+                    <ul>
+                        <li *ngFor="let move of pokemon.moves">{{ move.move.name | titlecase }}</li>
+                    </ul>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
