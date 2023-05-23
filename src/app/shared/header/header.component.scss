@@ -69,21 +69,7 @@ $colors: (
     color:#fff;
   }
   
-  .header-dark .navbar .navbar-toggler {
-    border-color:#747474;
-  }
-  
-  .header-dark .navbar .navbar-toggler:hover, .header-dark .navbar-toggler:focus {
-    background:none;
-  }
-  
-  .header-dark .navbar .navbar-toggler {
-    color:#eee;
-  }
-  
-  .header-dark .navbar .navbar-collapse, .header-dark .navbar .form-inline {
-    border-color:#636363;
-  }
+
   
   @media (min-width: 992px) {
     .header-dark .navbar.navbar .navbar-nav .nav-link {
@@ -104,38 +90,21 @@ $colors: (
   .header-dark .navbar .navbar-nav > li > .dropdown-menu {
     margin-top:-5px;
     box-shadow:0 4px 8px rgba(0,0,0,.1);
-    background-color:#fff;
+    background-color:#383838;
     border-radius:2px;
+    position: absolute;
+    top: 100%;
+    left: -100%;
+    z-index: 1000;
   }
   
   .header-dark .navbar .dropdown-menu .dropdown-item:focus, .header-dark .navbar .dropdown-menu .dropdown-item {
     line-height:2;
     font-size:14px;
-    color:#37434d;
+    color:#ffffff;
   }
-  
-  .header-dark .navbar .dropdown-menu .dropdown-item:focus, .header-dark .navbar .dropdown-menu .drodown-item:hover {
-    background:#ebeff1;
-  }
-  
-  .header-dark .navbar .action-button, .header-dark .navbar .action-button:active {
-    font-size:inherit;
-    box-shadow:none;
-    border:none;
-    text-shadow:none;
-    padding:.5rem .8rem;
-    transition:background-color 0.25s;
-  }
-  
-  .header-dark .navbar .action-button:hover {
-    background:#269d9d;
-  }
-  
-  .header-dark .navbar .form-inline label {
-    color:#ccc;
-  }
-  
-  
+
+
   .header-dark .hero {
     margin-top:60px;
   }
@@ -165,3 +134,12 @@ $colors: (
     background-color:#666;
   }
   
+
+  @media (max-width: 768px) {
+    .btn {
+      border: none;
+      color: map-get($colors , 'yellow-primary' );
+      font-size: 13px;
+      padding: 4px;
+    }
+  }

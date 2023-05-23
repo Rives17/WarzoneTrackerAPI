@@ -8,6 +8,7 @@ input {
 }
 
 
+
 img {
   width: 400px;
   height: 400px;
@@ -23,8 +24,16 @@ img:hover {
     transform: scale(105%);
 }
 
-h1 { 
-    margin-top: 20px;
+h1 {
+  font-size: 50px;
+  background: -webkit-linear-gradient(
+    45deg,
+    rgb(255, 226, 62),
+    rgb(255, 145, 0) );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800; 
+  margin-top: 20px;
 }
 
 

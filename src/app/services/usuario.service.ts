@@ -33,7 +33,7 @@ export class UsuarioService {
 
   const token = localStorage.getItem('token') || '';
 
-  return this.http.get(`${base_url}/login/renewLogin`, {
+  return this.http.get(`${base_url}/auth/renewLogin`, {
       headers: { 'x-token': token }
     }).pipe(
       map( (resp: any) => {
@@ -55,7 +55,7 @@ export class UsuarioService {
 
   crearUsuario(formData: RegisterForm) {
     
-    return this.http.post(`${base_url}/usuarios`, formData)
+    return this.http.post(`${base_url}/auth/register`, formData)
                 .pipe(
                   tap( (resp: any) => {
                     localStorage.setItem('token', resp.token)
@@ -64,7 +64,7 @@ export class UsuarioService {
     
   };
 
-  actualizarPerfil(data: {email: string, nombre: string}) {
+  actualizarPerfil(data: {email: string, username: string}) {
 
     return this.http.put(`${base_url}/usuarios/${this.uid}`, data, {
       headers: { 'x-token': this.token }
@@ -78,7 +78,7 @@ export class UsuarioService {
 
   login(formData: LoginForm) {
     
-    return this.http.post(`${base_url}/login`, formData)
+    return this.http.post(`${base_url}/auth/login`, formData)
                 .pipe(
                   tap( (resp: any) => {
                     localStorage.setItem('token', resp.token)

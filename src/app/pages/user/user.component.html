@@ -1,7 +1,10 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <h1 class="text-center">{{usuario.username}}</h1>
+
+            <h1 class="text-center">{{ usuario.username | uppercase }}</h1>
+              <p class="text-center">{{ usuario.email }}</p>
+              
             <div class="text-center">
                 <div class="avatar">
                     <label for="file-upload">

@@ -24,9 +24,7 @@ export class LoginComponent {
 
   constructor(private router: Router,
     private fb: FormBuilder,
-    private usuarioService: UsuarioService,
-    private ngZone: NgZone) {
-  }
+    private usuarioService: UsuarioService) {}
 
   
 
@@ -52,42 +50,5 @@ export class LoginComponent {
         // Swal.fire('Error', err.error.msg, 'error')
       });
   }
-
-
-  // ngAfterViewInit(): void {
-  //   this.googleInit();
-
-  // }
-
-  // googleInit() {
-
-  //   return new Promise<void> ( resolve => {
-
-  //     google.accounts.id.initialize({
-  //       client_id: "869468473208-bm3ge9jitdvb1iu5bfak2ir5tnf8h1k4.apps.googleusercontent.com",
-  //       callback: (response: any) => this.handleCredentialResponse(response)
-  //     });
-
-  //     google.accounts.id.renderButton(
-  //       this.googleBtn.nativeElement,
-  //       { theme: "outline", size: "large" }  // customization attributes
-  //     )
-
-  //     resolve();
-
-  //   })
-  // }
-
-  // handleCredentialResponse( response: any) {
-  //   // console.log("Encoded JWT ID token: " + response.credential);
-  //   this.usuarioService.loginGoogle(response.credential)
-  //     .subscribe(resp => {
-  //       this.ngZone.run(() => {
-  //         this.router.navigateByUrl('/')
-  //       })
-  //     })
-  // }
-
-
 
 }

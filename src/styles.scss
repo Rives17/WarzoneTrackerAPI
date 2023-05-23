@@ -19,7 +19,7 @@ $colors: (
 
 
 body {
-    font-family: 'Archivo', sans-serif;
+    font-family: 'Archivo';
     color: map-get($colors, 'white' );
     background-color: map-get($colors, 'black-secondary' )
 }

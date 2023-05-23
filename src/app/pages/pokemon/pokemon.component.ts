@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable, debounceTime, pipe } from 'rxjs';
 import { PokeapiService } from 'src/app/services/pokeapi.service';
 
 @Component({
@@ -18,7 +19,7 @@ export class PokemonComponent implements OnInit {
     this.getOnePokemon()
   }
 
-  getOnePokemon() {
+  getOnePokemon(){
 
     let name!: string;
 

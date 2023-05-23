@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { debounceTime } from 'rxjs';
 
 import { PokeapiService } from 'src/app/services/pokeapi.service';
 @Component({
@@ -23,7 +24,7 @@ export class PlayerComponent {
     
     for (let id = 1; id <= 151; id++) {
   
-      this.pokeApiService.getPokemons(id)
+     this.pokeApiService.getPokemons(id)
         .subscribe(data => {
           this.pokemons.push(data)
         })

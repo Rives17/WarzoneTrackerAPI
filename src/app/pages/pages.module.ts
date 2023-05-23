@@ -8,7 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { SharedModule } from '../shared/shared.module';
 import { PlayerComponent } from './player/player.component';
 import { UserComponent } from './user/user.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PokemonComponent } from './pokemon/pokemon.component';
 
 
@@ -26,7 +26,8 @@ import { PokemonComponent } from './pokemon/pokemon.component';
     CommonModule,
     RouterModule,
     SharedModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
   ]

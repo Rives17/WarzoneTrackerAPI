@@ -50,7 +50,14 @@
     </div>
 
       <div class="col-lg-12 col-xs-6 colSearch">
-        <input type="search" value placeholder="Introduce tu id" class="input-search" name="gametarg"
+        <input type="search" 
+                [placeholder]="platform === 'acti' ? 'Introduce Activison ID Name#123456' : 
+                               platform === 'psn' ? 'Introduce PlayStation Network ID' : 
+                               platform === 'battle' ? 'Introduce Battle.net Name#1234' : 
+                               platform === 'xbl' ? 'Introduce Xbox Live ID' : 
+                               'Selecciona una plataforma'" 
+                class="input-search" 
+                name="gametarg"
           [(ngModel)]="gametarg" />
         <button type="submit" class="btn">Buscar</button>
       </div>
