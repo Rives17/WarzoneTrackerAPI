@@ -6,6 +6,7 @@ $colors: (
 
 );
 
+$breakpoint-small: 576px;
 
 .container-fluid{
     background-color: map-get($colors, 'black-primary' );
@@ -14,7 +15,7 @@ $colors: (
     .footer-heading {
       margin-bottom: 30px;
       font-size: 24px;
-      
+
       .logo {
         color: #ffffff;
         text-decoration: none;
@@ -25,33 +26,33 @@ $colors: (
         }
       }
     }
-    
+
     .menu {
       margin-bottom: 10px;
-      
+
       a {
         color: #b4b4b4;
+        padding: 1px 6px;
         text-decoration: none;
-        margin-right: 15px;
         transition: color 0.3s;
-        
+
         &:hover {
             color: map-get($colors, 'yellow-primary' )
         }
       }
     }
-    
+
     .ftco-footer-social {
       margin-bottom: 10px;
-      
+
       li {
         display: inline-block;
         margin-right: 10px;
-        
+
         &:last-child {
           margin-right: 0;
         }
-        
+
         a {
           display: inline-block;
           width: 40px;
@@ -61,7 +62,7 @@ $colors: (
           color: #b4b4b4;
           border-radius: 50%;
           transition: background-color 0.3s;
-          
+
           &:hover {
             background-color: map-get($colors, 'yellow-primary' );
             color: map-get($colors, 'black-primary' );
@@ -69,19 +70,26 @@ $colors: (
         }
       }
     }
-    
+
     .copyright {
       font-size: 14px;
       color: #b4b4b4;
-      
+
       a {
         color: map-get($colors, 'yellow-primary' );
         text-decoration: none;
-        
+
         &:hover {
           text-decoration: underline;
         }
       }
     }
   }
-  
+
+  @media (max-width: $breakpoint-small) {
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(3, 0.1fr);
+      justify-content: center;
+    }
+  }

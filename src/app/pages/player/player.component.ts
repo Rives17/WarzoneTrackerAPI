@@ -21,28 +21,13 @@ export class PlayerComponent {
   }
 
   getPokemons() {
-    
+
     for (let id = 1; id <= 151; id++) {
-  
+
      this.pokeApiService.getPokemons(id)
         .subscribe(data => {
           this.pokemons.push(data)
         })
     }
-  }
-
-  filterPokemons() {
-  
-    if(!this.searchTerm) return this.getPokemons()
-
-    this.pokemons = this.pokemons.filter( pokemon => 
-        pokemon.name.toLowerCase().includes(this.searchTerm.toLowerCase()))
-    
-  }
-
-
-  getOne(name: string) {
-    console.log(name);
-    
   }
 }
