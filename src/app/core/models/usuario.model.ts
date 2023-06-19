@@ -3,9 +3,9 @@ import { environment } from "src/environments/environment";
 const base_url = environment.baseUrl
 
 export class Usuario {
-   
+
     constructor(
-        
+
         public username: string,
         public email: string,
         public password?: string,

@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
-import  Swal  from 'sweetalert2';
+import { Usuario } from 'src/app/core/models/usuario.model';
 
-import { Usuario } from 'src/app/models/usuario/usuario.model';
 import { UploadService } from 'src/app/services/upload.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { environment } from 'src/environments/environment';
+
+import  Swal  from 'sweetalert2';
 
 @Component({
   selector: 'app-user',
@@ -16,27 +15,26 @@ import { environment } from 'src/environments/environment';
 export class UserComponent implements OnInit {
 
   public usuario: Usuario;
+  public usuarioCopy!: Usuario;
   public uploadFile!: File;
   public imgTemp: any = '';
-  public perfilForm!: FormGroup;
-
-
 
 
   constructor(private usuarioService: UsuarioService,
-              private uploadService: UploadService,
-              private fb: FormBuilder) {
+              private uploadService: UploadService) {
 
     this.usuario = usuarioService.usuario;
   }
   ngOnInit(): void {
+    this.usuarioService.getUser()
+    .subscribe((resp: any) => {
+      this.usuarioCopy = resp.usuario
+    })
 
   }
 
-
   uploadImg() {
-    console.log(this.usuario.uid);
-    this.uploadService.uploadFile(this.uploadFile, this.usuario.uid!)
+    this.uploadService.uploadFile(this.uploadFile, this.usuarioCopy.uid!)
       .then( img => {
         this.usuario.img = img;
         Swal.fire('Bien!', 'Imagen actualizada', 'success');
@@ -60,6 +58,13 @@ export class UserComponent implements OnInit {
       this.imgTemp = reader.result
     }
     return
+  }
+
+  deleteUser(usuarioCopy: Usuario) {
+
+    this.usuarioService.deleteUser(usuarioCopy).subscribe(
+      resp => console.log(resp)
+    )
   }
 
 }

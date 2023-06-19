@@ -1,8 +1,9 @@
-import { Component, ElementRef, NgZone, ViewChild } from '@angular/core';
+import { Component} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Usuario } from 'src/app/models/usuario/usuario.model';
+import { Usuario } from 'src/app/core/models/usuario.model';
 import { UsuarioService } from 'src/app/services/usuario.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -10,8 +11,6 @@ import { UsuarioService } from 'src/app/services/usuario.service';
   styleUrls: [ './login.component.scss' ]
 })
 export class LoginComponent {
-
-  @ViewChild('googleBtn') googleBtn!: ElementRef;
 
   public formSubmitted = false;
   public usuario!: Usuario;
@@ -26,8 +25,6 @@ export class LoginComponent {
     private fb: FormBuilder,
     private usuarioService: UsuarioService) {}
 
-  
-
   login() {
 
     this.usuarioService.login(this.loginForm.value)
@@ -41,13 +38,12 @@ export class LoginComponent {
         }
         if(resp) {
           this.router.navigateByUrl('api/home');
-
         }
 
       }, (err) => {
         console.log(err);
 
-        // Swal.fire('Error', err.error.msg, 'error')
+        Swal.fire('Error', err.error.msg, 'error')
       });
   }
 

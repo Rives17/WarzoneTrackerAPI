@@ -9,8 +9,8 @@ import { StatsService } from 'src/app/services/stats.service';
 })
 export class SearchComponent{
 
-  gametarg!: string;
-  platform!: string;
+  public gametarg!: string;
+  public platform!: string;
 
   constructor(private router: Router,
               private statsService: StatsService){}
@@ -23,7 +23,9 @@ export class SearchComponent{
     console.log(this.gametarg);
     console.log(this.platform);
 
-    // this.statsService.getMatches(this.platform, this.gametarg )
-    this.router.navigateByUrl(`api/player/${encodeURIComponent(this.gametarg)}/${this.platform}`)
+    this.statsService.getMatches(this.platform, encodeURIComponent(this.gametarg))
+
+    this.router.navigateByUrl(`api/player/${this.platform}/${encodeURIComponent(this.gametarg)}`)
   };
+
 }

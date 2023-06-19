@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable, debounceTime, pipe } from 'rxjs';
+import { Pokemon } from 'src/app/interfaces/pokemon';
 import { PokeapiService } from 'src/app/services/pokeapi.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { PokeapiService } from 'src/app/services/pokeapi.service';
 })
 export class PokemonComponent implements OnInit {
 
-  public onePokemon: any[] = []
+  public onePokemon: Pokemon[] = []
 
   constructor(private pokeApiService: PokeapiService,
               private  route: ActivatedRoute) {}
@@ -26,7 +26,7 @@ export class PokemonComponent implements OnInit {
     this.route.params.subscribe(params => {
       name = params['name'];
     })
-    
+
     this.pokeApiService.getOne(name)
       .subscribe( resp => {
         console.log(resp)

@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { debounceTime } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { Pokemon } from 'src/app/interfaces/pokemon';
 
 import { PokeapiService } from 'src/app/services/pokeapi.service';
 @Component({
@@ -8,26 +7,25 @@ import { PokeapiService } from 'src/app/services/pokeapi.service';
   templateUrl: './player.component.html',
   styleUrls: ['./player.component.scss']
 })
-export class PlayerComponent {
 
-  public pokemons: any[] = [];
-  public searchTerm!: string;
+export class PlayerComponent implements OnInit {
 
-  constructor(private pokeApiService: PokeapiService,
-              private router: Router) { }
+  public pokemons: Pokemon[] = [];
+
+  constructor(private pokeApiService: PokeapiService) { }
 
   ngOnInit(): void {
     this.getPokemons();
   }
 
-  getPokemons() {
-
+  getPokemons(): void {
     for (let id = 1; id <= 151; id++) {
 
-     this.pokeApiService.getPokemons(id)
+    this.pokeApiService.getPokemons(id)
         .subscribe(data => {
           this.pokemons.push(data)
         })
     }
   }
+
 }

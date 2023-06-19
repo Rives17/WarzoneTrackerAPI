@@ -5,7 +5,7 @@ import { PagesComponent } from './pages.component';
 
 
 const routes: Routes = [
-{ 
+{
     path: 'api',
     component: PagesComponent,
     loadChildren: () => import('./child-routes.module').then( m => m.ChildRoutesModule )
@@ -19,4 +19,3 @@ const routes: Routes = [
     exports: [ RouterModule ]
   })
   export class PagesRoutingModule { }
-  

@@ -6,7 +6,7 @@ import { PagesRoutingModule } from './pages/pages.routing';
 import { AuthRoutingModule } from './auth/auth.routing';
 
 const routes: Routes = [
-  
+
   { path: '', redirectTo: 'api/home', pathMatch: 'full' },
   { path: '**', component: NopagefoundComponent}
 ]

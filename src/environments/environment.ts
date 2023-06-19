@@ -1,9 +1,10 @@
 
 export const environment = {
     production: false,
-    apiKey: {'X-RapidAPI-Key': '4347e3f32emshdb3768ca3513150p14993fjsn271918a66b5b',
-            'X-RapidAPI-Host': 'call-of-duty-modern-warfare.p.rapidapi.com'},
+    apiKey: {'TRN-Api-Key': '4d26370b-6ddb-4397-a6ea-252cd0c81f75'},
     apiUrl: 'https://call-of-duty-modern-warfare.p.rapidapi.com/warzone',
+    apiUrl2: 'https://api.tracker.gg/api/v2/warzone/standard/profile',
     pokeApiUrl: 'https://pokeapi.co/api/v2',
-    baseUrl: 'http://localhost:3007/api'
+    baseUrl: 'http://localhost:3007/api',
+    SSO_COKIE: "Njg2NTA2Njc5MzM0ODEyNDk3MzoxNjg3ODYyNzQyMTUyOmFmNGQ5ODgxNzE3NzEzZGExNWRiZTE1ODgzNTczYmUy"
   };

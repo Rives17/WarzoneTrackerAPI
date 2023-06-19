@@ -2,13 +2,12 @@
     <div class="row">
         <div class="col-xl-12" *ngFor="let pokemon of onePokemon">
 
-            <div class="pokemon-details">
+            <div class="pokemon-details m-5">
                 <h2>{{ pokemon.name | titlecase }}</h2>
 
                 <div class="pokemon-image">
                     <img [src]="pokemon.sprites.front_default" alt="{{ pokemon.name }} image">
                 </div>
-
                 <div class="pokemon-info">
 
                     <h3>Types:</h3>

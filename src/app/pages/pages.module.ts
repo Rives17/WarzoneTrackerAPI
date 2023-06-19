@@ -8,9 +8,9 @@ import { HomeComponent } from './home/home.component';
 import { SharedModule } from '../shared/shared.module';
 import { PlayerComponent } from './player/player.component';
 import { UserComponent } from './user/user.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PokemonComponent } from './pokemon/pokemon.component';
-
+import { CoreModule } from '../core/core.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -26,6 +26,7 @@ import { PokemonComponent } from './pokemon/pokemon.component';
     CommonModule,
     RouterModule,
     SharedModule,
+    CoreModule,
     FormsModule,
     ReactiveFormsModule
   ],

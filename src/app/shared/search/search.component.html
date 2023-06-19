@@ -3,12 +3,12 @@
   <div class="container">
     <div class="row platformBox">
 
-      <div class="col-lg-3" [ngClass]="{'active': platform === 'acti'}">
-        <label for="acti">
+      <div class="col-lg-3" [ngClass]="{'active': platform === 'atvi'}">
+        <label for="atvi">
           <div class="platform-item__logo">
             <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/Activision.svg" alt="" />
           </div>
-          <input type="radio" id="acti" class="radio" value="acti" name="platform"
+          <input type="radio" id="atvi" class="radio" value="atvi" name="platform"
             (change)="radioChangeHandler($event)" />
           <p>Activision ID</p>
         </label>
@@ -50,13 +50,14 @@
     </div>
 
       <div class="col-lg-12 col-xs-6 colSearch">
-        <input type="search" 
-                [placeholder]="platform === 'acti' ? 'Introduce Activison ID Name#123456' : 
-                               platform === 'psn' ? 'Introduce PlayStation Network ID' : 
-                               platform === 'battle' ? 'Introduce Battle.net Name#1234' : 
-                               platform === 'xbl' ? 'Introduce Xbox Live ID' : 
-                               'Selecciona una plataforma'" 
-                class="input-search" 
+        <input type="search"
+                [placeholder]="platform === 'acti' ? 'Introduce Activison ID Name#123456' :
+                               platform === 'psn' ? 'Introduce PlayStation Network ID' :
+                               platform === 'battle' ? 'Introduce Battle.net Name#1234' :
+                               platform === 'xbl' ? 'Introduce Xbox Live ID' :
+                               'Selecciona una plataforma'"
+
+                class="input-search"
                 name="gametarg"
           [(ngModel)]="gametarg" />
         <button type="submit" class="btn">Buscar</button>

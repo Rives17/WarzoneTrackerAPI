@@ -2,24 +2,22 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsuarioService } from 'src/app/services/usuario.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: [ './register.component.scss'
-  ]
+  styleUrls: [ './register.component.scss']
 })
 export class RegisterComponent {
 
-  
   public formSubmitted = false;
 
-  public registerForm = this.fb.group({
+  public registerForm: FormGroup = this.fb.group({
     username: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
     password: ['', Validators.required],
-    password2: ['', Validators.required],
-    terminos: [false, Validators.required],
+    password2: ['', Validators.required]
   }, {
     validators: this.passwordsIguales('password', 'password2')
   });
@@ -40,13 +38,13 @@ export class RegisterComponent {
     this.usuarioService.crearUsuario(this.registerForm.value)
         .subscribe( resp => {
           this.router.navigateByUrl('api/home')
-     
+
         }, (err) => {
           console.log(err);
-          
-          // Swal.fire('Error', err.error.msg, 'error')
+
+          Swal.fire('Error', err.error.msg, 'error')
         });
-    
+
   }
 
   campoNoValido(campo: string): boolean {
@@ -69,12 +67,8 @@ export class RegisterComponent {
 
   }
 
-  aceptaTerminos() {
-    return !this.registerForm.get('terminos')?.value && this.formSubmitted;
-  }
-
   passwordsIguales(pass1: string, pass2: string) {
-    
+
     return (formGroup: FormGroup) => {
 
       const pass1Control = formGroup.get(pass1);

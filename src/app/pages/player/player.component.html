@@ -1,7 +1,7 @@
 
 <div class="container">
   <div class="row" >
-    <div class="col col-xl-3 col-lg-4 col-sm-6 "*ngFor="let pokemon of pokemons">
+    <div class="col col-xl-3 col-lg-4 col-sm-6 " *ngFor="let pokemon of pokemons">
 
       <div class="card text-white bg-dark m-3" style="max-width: 18rem;" [routerLink]="['/api/pokemon', pokemon.name ]">
         <img [src]="pokemon.sprites.front_default" class="card-img-top" alt="...">
