@@ -1,7 +1,8 @@
 
 <div class="container">
+  <input type="text" [(ngModel)]="searchTerm" placeholder="Buscar pokemon">
   <div class="row" >
-    <div class="col col-xl-3 col-lg-4 col-sm-6 " *ngFor="let pokemon of pokemons">
+    <div class="col col-xl-3 col-lg-4 col-sm-6 " *ngFor="let pokemon of filteredPokemons | filterPokemon: searchTerm: pageSize: currentPage">
 
       <div class="card text-white bg-dark m-3" style="max-width: 18rem;" [routerLink]="['/api/pokemon', pokemon.name ]">
         <img [src]="pokemon.sprites.front_default" class="card-img-top" alt="...">
@@ -11,5 +12,10 @@
       </div>
 
     </div>
+  </div>
+  <div class="buttonsPage">
+    <button class="btn btn-primary" (click)="onPageChange(currentPage - 1)" [disabled]="currentPage === 1"><i class="bi bi-arrow-left-short"></i></button>
+    <p>Página {{ currentPage }}</p>
+    <button class="btn btn-primary" (click)="onPageChange(currentPage + 1)" [disabled]="currentPage === totalPages"><i class="bi bi-arrow-right-short"></i></button>
   </div>
 </div>

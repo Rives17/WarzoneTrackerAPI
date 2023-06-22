@@ -11,6 +11,11 @@ import { PokeapiService } from 'src/app/services/pokeapi.service';
 export class PlayerComponent implements OnInit {
 
   public pokemons: Pokemon[] = [];
+  public filteredPokemons: Pokemon[] = [];
+  public searchTerm: string = '';
+  public pageSize: number = 8;
+  public currentPage: number = 1;
+  public totalPages: number = 0;
 
   constructor(private pokeApiService: PokeapiService) { }
 
@@ -24,8 +29,13 @@ export class PlayerComponent implements OnInit {
     this.pokeApiService.getPokemons(id)
         .subscribe(data => {
           this.pokemons.push(data)
+          this.filteredPokemons = this.pokemons;
+          this.totalPages = Math.ceil(this.filteredPokemons.length / this.pageSize);
         })
     }
+  }
+  onPageChange(page: number): void {
+    this.currentPage = page;
   }
 
 }

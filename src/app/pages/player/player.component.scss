@@ -27,4 +27,21 @@
         margin-top: 0.5rem;
       }
     }
+    .buttonsPage {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px;
+      button {
+        width: 25px;
+        height: 25px;
+        padding: 0;
+
+      }
+      p {
+        margin: 0;
+        padding: 10px;
+        font-size: 13px;
+      }
+    }
   }
